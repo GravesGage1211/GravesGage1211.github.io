@@ -42,6 +42,8 @@
         var box = jQuery(".box"); // reference to the HTML .box element
         var board = jQuery(".board"); // reference to the HTML .board element
         var boardWidth = board.width(); // the maximum X-Coordinate of the screen
+        var PositionX = 0;
+        var points = 0;
 
         // update the boardWidth variable when the window is resized
         jQuery(window).on("resize", function () {
@@ -67,12 +69,9 @@
         //////////////////////////////////////////////////////////////////
         /////////////////// YOUR CODE BELOW HERE /////////////////////////
         //////////////////////////////////////////////////////////////////
-
-        // TODO 2 - Variable declarations
-
-
-
-
+        var positionX = 0;
+        var points = 0;
+        var speed = 10;
 
         /**
          * This Function will be called 20 times/second.
@@ -80,12 +79,16 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
+          positionX = positionX + speed;
 
-        
-
-          
+          if (positionX > boardWidth) {
+            speed *= -1;
+          }
+          if (positionX < 0) {
+            speed *= -1;
+          }
+          moveBoxTo(positionX);
         }
-
         /**
          * This Function will be called each time the box is clicked.
          * Each time it is called, it should perform each of the following actions:
@@ -94,14 +97,12 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
+          points = points + 1;
+          changeBoxText(points);
 
-
-
-
+          speed = speed + 3;
+          positionX = 0;
         }
-
-
-        
       })();
     </script>
   </body>
