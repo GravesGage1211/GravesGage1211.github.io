@@ -65,44 +65,43 @@ var init = function (window) {
 
       // TODO 8 / TODO 9 : Iterate over the array
 
-      for (var i = 0; i < circles.length; i++) {
+      for (var i = 0; i < circles.length; i++) { 
         physikz.updatePosition(circles[i]);
         game.checkCirclePosition(circles[i]);
-      }
-
-      /* 
+      }      
+    }
+    /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
-      game.checkCirclePosition = function (circle) {
-        // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-        if (circle.x > canvas.width) {
-          circle.x = 0;
-        }
+    game.checkCirclePosition = function (circle) {
+      // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
+      if (circle.x > canvas.width) {
+        circle.x = 0;
+      }
 
-        // TODO 6 : YOUR CODE STARTS HERE //////////////////////
+      // TODO 6 : YOUR CODE STARTS HERE //////////////////////
 
-        if (circle.x < 0) {
-          circle.x = canvas.width;
-        }
-        if (circle.y > canvas.height) {
-          circle.y = 0;
-        }
-        if (circle.y < 0) {
-          circle.y = canvas.height;
-        }
-      };
+      if (circle.x < 0) {
+        circle.x = canvas.width;
+      }
+      if (circle.y > canvas.height) {
+        circle.y = 0;
+      }
+      if (circle.y < 0) {
+        circle.y = canvas.height;
+      }
+    };
 
-      // YOUR TODO 6 CODE ENDS HERE //////////////////////////
-    }
+    // YOUR TODO 6 CODE ENDS HERE //////////////////////////
 
     /////////////////////////////////////////////////////////////
     // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
     /////////////////////////////////////////////////////////////
 
     view.addChild(fps);
-    app.addUpdateable(fps);
+    app.addUpdateable(fps);                                              
 
     game.circle = circle;
     game.circles = circles;
