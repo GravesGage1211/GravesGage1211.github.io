@@ -18,7 +18,12 @@ var makeLevelData = function (window) {
           { type: "sawblade", x: 400, y: groundY },
           { type: "sawblade", x: 600, y: groundY },
           { type: "sawblade", x: 900, y: groundY },
-        ],
+          {type: "obstacle", x: 300, y: groundY - 40},
+          { type: "obstacle", x: 550, y: groundY - 80},
+           { type: "obstacle", x: 300, y: groundY - 20},
+           { "type": "reward", "x": 1050, "y": groundY - 60},
+           { "type": "end", "x": 1300, "y": groundY - 60},
+          ],
       },
       {
         name: "Robot Rampage",

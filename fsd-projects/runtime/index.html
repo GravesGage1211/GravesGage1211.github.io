@@ -20,7 +20,7 @@
     <script src="bower_components/TweenJS/lib/tweenjs.min.js"></script>
     <script src="bower_components/SoundJS/lib/soundjs-0.6.2.min.js"></script>
     <script src="bower_components/opspark-draw/draw.js"></script>
-    <script src="bower_components/racket/racket.js"></script>
+    <script src="bower+_components/racket/racket.js"></script>
 
     <!-- our app javascript code -->
     <script src="js/util/load.js"></script>
@@ -33,7 +33,6 @@
     <script src="js/projectile/projectileManager.js"></script>
     <script src="js/view/pacifier.js"></script>
     <script src="js/view/background.js"></script>
-   backgroundFill = draw.rect(canvasWidth, groundY, "lightgreen");
     <script src="js/view/ground.js"></script>
     <script src="js/view/hud.js"></script>
     <script src="js/player/halle.js"></script>
@@ -53,11 +52,14 @@
     <script id="index">
       (function () {
         "use strict";
+             backgroundFill = draw.rect(canvasWidth, canvasHeight, '#87CEEB');
+
+
         background(window);
         makeLevelData(window);
         runLevels(window);
         init(window);
       })();
     </script>
-  </body>
+  </body>            
 </html>

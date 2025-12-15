@@ -18,11 +18,49 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
+   function createSawblade(x,y){
+       var hitZoneSize = 30;
+     var damageFromObstacle = 5;
+     var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+     sawBladeHitZone.x = 400;
+     sawBladeHitZone.y = 100;
+     game.addGameItem(sawBladeHitZone);
+     var obstacleImage = draw.bitmap("img/sawblade.png");
+     sawBladeHitZone.addChild(obstacleImage);
+     obstacleImage.x = -30
+     obstacleImage.y = -30
+   }  
+      sawBladeHitZone.x   
+      sawBladeHitZone.y
+      var enemy = game.createGameItem("enemy", 25);
+      var redSquare = draw.rect(50, 50, "red");
+      redSquare.x = -25;
+    redSquare.y = -25;
+    enemy.addChild(redSquare);
 
     
 
-    function startLevel() {
+    function startLevel(){
+
       // TODO 13 goes below here
+      var level = levelData[currentLevel];
+      var levelObjects = level.gameItems;
+      for (var i = 0; i < levelObjects.length; i++) {
+         if(levelObjects[i].type === "sawblade") {
+           createSawblade(levelObjects[i].x, levelObjects[i].y);
+
+         if(levelObjects[i].type === "Obstacle") {
+           createReward(levelObjects[i].x, levelObjects[i].y);
+        }
+         if (levelObjects[i].type === "reward") {
+          createSawblade(levelObjects[i].x, levelObjects[i].y);
+
+         if(levelObjects[i].type === "end") {
+           createSawblade(levelObjects[i].x, levelObjects[i].y);
+
+
+       }
+
 
 
 
