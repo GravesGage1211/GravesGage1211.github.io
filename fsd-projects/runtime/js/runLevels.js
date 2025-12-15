@@ -18,7 +18,7 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
-   function createSawblade(x,y){
+   function createSawBlade(x,y){
        var hitZoneSize = 30;
      var damageFromObstacle = 5;
      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
@@ -29,9 +29,12 @@ var runLevels = function (window) {
      sawBladeHitZone.addChild(obstacleImage);
      obstacleImage.x = -30
      obstacleImage.y = -30
-   }  
-      sawBladeHitZone.x   
-      sawBladeHitZone.y
+    
+   }
+
+   createSawBlade(700, 400);
+   createSawBlade(1000, 415);
+   createSawBlade(1500, 340);
       var enemy = game.createGameItem("enemy", 25);
       var redSquare = draw.rect(50, 50, "red");
       redSquare.x = -25;
@@ -48,21 +51,21 @@ var runLevels = function (window) {
       for (var i = 0; i < levelObjects.length; i++) {
          if(levelObjects[i].type === "sawblade") {
            createSawblade(levelObjects[i].x, levelObjects[i].y);
-
-         if(levelObjects[i].type === "Obstacle") {
-           createReward(levelObjects[i].x, levelObjects[i].y);
+         }
+         if(levelObjects[i].type === "obstacle") {
+           createObstacle(levelObjects[i].x, levelObjects[i].y);
         }
          if (levelObjects[i].type === "reward") {
-          createSawblade(levelObjects[i].x, levelObjects[i].y);
-
+          createReward(levelObjects[i].x, levelObjects[i].y);
+         }
          if(levelObjects[i].type === "end") {
-           createSawblade(levelObjects[i].x, levelObjects[i].y);
+           createLevelMarker(levelObjects[i].x, levelObjects[i].y);
 
 
        }
 
-
-
+      }
+    
 
       //////////////////////////////////////////////
       // DO NOT EDIT CODE BELOW HERE
@@ -74,7 +77,7 @@ var runLevels = function (window) {
       }
     }
     startLevel();
-  };
+  
 };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
@@ -84,4 +87,5 @@ if (
 ) {
   // here, export any references you need for tests //
   module.exports = runLevels;
+}
 }
