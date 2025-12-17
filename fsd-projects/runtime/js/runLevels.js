@@ -58,7 +58,7 @@ var runLevels = function (window) {
          if (levelObjects[i].type === "reward") {
           createReward(levelObjects[i].x, levelObjects[i].y);
          }
-         if(levelObjects[i].type === "end") {
+         if(levelObjects[i){
            createLevelMarker(levelObjects[i].x, levelObjects[i].y);
 
 
