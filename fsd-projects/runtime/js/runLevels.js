@@ -47,10 +47,12 @@ var runLevels = function (window) {
 
       // TODO 13 goes below here
       var level = levelData[currentLevel];
-      var levelObjects = level.gameItems;
+      var levelObjects = level.gameItems
       for (var i = 0; i < levelObjects.length; i++) {
+        var eachObject = levelObjects
+        
          if(levelObjects[i].type === "sawblade") {
-           createSawblade(levelObjects[i].x, levelObjects[i].y);
+           createSawBlade(levelObjects[i].x, levelObjects[i].y);
          }
          if(levelObjects[i].type === "obstacle") {
            createObstacle(levelObjects[i].x, levelObjects[i].y);
@@ -58,7 +60,7 @@ var runLevels = function (window) {
          if (levelObjects[i].type === "reward") {
           createReward(levelObjects[i].x, levelObjects[i].y);
          }
-         if(levelObjects[i){
+         if(levelObjects[i]){
            createLevelMarker(levelObjects[i].x, levelObjects[i].y);
 
 
